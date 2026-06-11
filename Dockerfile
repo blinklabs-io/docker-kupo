@@ -27,7 +27,7 @@ RUN echo "Building ${KUPO_REF}..." \
     && rm -rf /code/kupo/dist-newstyle/ \
     && rm -rf /root/.cabal/store/ghc-${GHC_VERSION}
 
-FROM ghcr.io/blinklabs-io/cardano-configs:20260430-1 AS cardano-configs
+FROM ghcr.io/blinklabs-io/cardano-configs:20260605-1 AS cardano-configs
 
 FROM debian:bookworm-slim AS kupo
 ENV LD_LIBRARY_PATH="/usr/local/lib"
