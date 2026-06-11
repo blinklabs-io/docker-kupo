@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+[[ -n ${DEBUG:-} ]] && set -x
+
+set -e
+
+case ${1:-} in
+	run)
+		shift
+		exec /usr/local/bin/run-kupo "${@}"
+		;;
+	health-check|copy|version|--version|-v|--help|-h)
+		exec /usr/local/bin/kupo "${@}"
+		;;
+	"")
+		exec /usr/local/bin/run-kupo
+		;;
+	-*)
+		exec /usr/local/bin/run-kupo "${@}"
+		;;
+	*)
+		exec "${@}"
+		;;
+esac
