@@ -1,4 +1,4 @@
-FROM ghcr.io/blinklabs-io/haskell:9.6.7-3.12.1.0-3 AS kupo-build
+FROM ghcr.io/blinklabs-io/haskell:9.12.3-3.14.2.0-1 AS kupo-build
 
 ARG KUPO_VERSION=2.11.0.1
 ARG KUPO_REF=tags/v${KUPO_VERSION}
